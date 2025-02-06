@@ -71,8 +71,9 @@
 
               // Function to display the 'code' parameter for debugging
         function displayCodeParam() {
-            const code = getQueryParam('code');
-            document.getElementById('debug').textContent = `Authorization code: ${code}`;
+             const code = getQueryParam('code');
+            const state = getQueryParam('state');
+            document.getElementById('debug').innerHTML = 'code: ${code} <br> state: ${state}';
         }
 
          // Call displayCodeParam on page load
@@ -85,9 +86,10 @@
 <body style="margin:0px;">
 
     <button onclick="openMobileApp()">Open Mobile App</button>
+    <br>
 
     <button onclick="openStaticLink()">Open Static Link</button>
-
+    <br><br>
     <div id="debug"></div>
 
 </body>
