@@ -35,6 +35,17 @@
            button:hover {
                background-color: #0056b3;
            }
+
+           #debug {
+               margin-top: 20px;
+               padding: 10px 20px;
+               font-size: 16px;
+               color: #333;
+               background-color: #fff;
+               border: 1px solid #ccc;
+               border-radius: 5px;
+               box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           }
     </style>
 
     <script type="text/javascript">
@@ -57,6 +68,15 @@
             const staticLinkUrl = 'https://cmcmarkets.com';
             window.location.href = staticLinkUrl;
         }
+
+              // Function to display the 'code' parameter for debugging
+        function displayCodeParam() {
+            const code = getQueryParam('code');
+            document.getElementById('debug').textContent = `Authorization code: ${code}`;
+        }
+
+         // Call displayCodeParam on page load
+        window.onload = displayCodeParam;
     </script>
 
 
@@ -67,6 +87,8 @@
     <button onclick="openMobileApp()">Open Mobile App</button>
 
     <button onclick="openStaticLink()">Open Static Link</button>
+
+    <div id="debug"></div>
 
 </body>
 
