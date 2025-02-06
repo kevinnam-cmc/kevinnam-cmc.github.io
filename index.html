@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Third Party Licenses</title>
+    <title>Google Web SSO Demo</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -36,76 +36,28 @@
             }
     </style>
 
+    <script type="text/javascript">
+
+        // Function to get query parameter by name
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function openMobileApp() {
+            // Get the 'code' parameter from the URL
+            const code = getQueryParam('code');
+
+            const deepLinkUrl = `asbstockbroking://cmcmarkets.com?code=${code}`;
+            window.location.href = deepLinkUrl;
+        }
+    </script>
+
+
 </head>
 
 <body style="margin:0px;">
-
-    <ul class="separator">
-        <li>
-            <a class="no-text-decoration" href="https://www.apache.org/licenses/LICENSE-2.0">
-                <b>Dagger</b>
-                <br/>
-                Copyright 2012 The Dagger Authors
-            </a>
-        </li>
-        <li>
-            <a class="no-text-decoration" href="https://github.com/bumptech/glide/blob/master/LICENSE">
-                <b>Glide</b>
-                <br/>
-                Copyright 2014 Google, Inc.
-            </a>
-        </li>
-        <li>
-            <a class="no-text-decoration" href="https://www.apache.org/licenses/LICENSE-2.0">
-                <b>Keystore Ultimate</b>
-                <br/>
-                Copyright 2018 Leonardo Rossetto
-            </a>
-        </li>
-        <li>
-            <a class="no-text-decoration" href="https://www.apache.org/licenses/LICENSE-2.0">
-                <b>OkHttp</b>
-                <br/>
-                Copyright 2019 Square, Inc.
-            </a>
-        </li>
-        <li>
-            <a class="no-text-decoration" href="https://www.apache.org/licenses/LICENSE-2.0">
-                <b>MPAndroidChart</b>
-                <br/>
-                Copyright 2020 Philipp Jahoda
-            </a>
-        </li>
-        <li>
-            <a class="no-text-decoration" href="https://www.apache.org/licenses/LICENSE-2.0">
-                <b>Pdf Viewer For Android</b>
-                <br/>
-                Copyright (c) 2020 Rajat Mittal
-            </a>
-        </li>
-        <li>
-            <a class="no-text-decoration" href="https://www.apache.org/licenses/LICENSE-2.0">
-                <b>PinView</b>
-                <br/>
-                Copyright 2017-2018 Chaos Leong
-            </a>
-        </li>
-        <li>
-            <a class="no-text-decoration" href="https://www.apache.org/licenses/LICENSE-2.0">
-                <b>Retrofit</b>
-                <br/>
-                Copyright 2013 Square, Inc.
-            </a>
-        </li>
-        <li>
-            <a class="no-text-decoration" href="https://www.apache.org/licenses/LICENSE-2.0">
-                <b>Timber</b>
-                <br/>
-                Copyright 2013 Jake Wharton
-            </a>
-        </li>
-
-    </ul>
+    <button onclick="openMobileApp()">Open Mobile App</button>
 </body>
 
 </html>
