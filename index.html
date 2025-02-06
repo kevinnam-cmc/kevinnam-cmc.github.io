@@ -10,42 +10,44 @@
     <meta name="color-scheme" content="light">
 
     <style>
-        body {
-               font-family: sans-serif;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               height: 100vh;
-               margin: 0;
-               background-color: #f0f0f0;
-           }
+body {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     margin: 0;
+     font-family: sans-serif;
+     background-color: #f0f0f0;
+ }
 
-           button {
-               padding: 15px 30px;
-               font-size: 18px;
-               margin: 10px;
-               cursor: pointer;
-               border: none;
-               border-radius: 5px;
-               background-color: #007bff;
-               color: white;
-               transition: background-color 0.3s ease;
-           }
+ button {
+     display: block;
+     margin: 10px 0;
+     padding: 15px 30px;
+     font-size: 18px;
+     cursor: pointer;
+     border: none;
+     border-radius: 5px;
+     background-color: #007bff;
+     color: white;
+     transition: background-color 0.3s ease;
+ }
 
-           button:hover {
-               background-color: #0056b3;
-           }
+ button:hover {
+     background-color: #0056b3;
+ }
 
-           #debug {
-               margin-top: 20px;
-               padding: 10px 20px;
-               font-size: 16px;
-               color: #333;
-               background-color: #fff;
-               border: 1px solid #ccc;
-               border-radius: 5px;
-               box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-           }
+ #debug {
+     margin-top: 20px;
+     padding: 10px 20px;
+     font-size: 16px;
+     color: #333;
+     background-color: #fff;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ }
     </style>
 
     <script type="text/javascript">
@@ -60,7 +62,7 @@
             // Get the 'code' parameter from the URL
             const code = getQueryParam('code');
 
-            const deepLinkUrl = 'asbstockbroking://cmcmarkets.com?code=${code}';
+            const deepLinkUrl = `asbstockbroking://cmcmarkets.com?code=${code}`;
             window.location.href = deepLinkUrl;
         }
 
@@ -71,9 +73,9 @@
 
               // Function to display the 'code' parameter for debugging
         function displayCodeParam() {
-             const code = getQueryParam('code');
+            const code = getQueryParam('code');
             const state = getQueryParam('state');
-            document.getElementById('debug').innerHTML = 'code: ${code} <br> state: ${state}';
+            document.getElementById('debug').innerHTML = `code: ${code} <br> state: ${state}`;
         }
 
          // Call displayCodeParam on page load
@@ -84,12 +86,9 @@
 </head>
 
 <body style="margin:0px;">
-
     <button onclick="openMobileApp()">Open Mobile App</button>
-    <br>
 
     <button onclick="openStaticLink()">Open Static Link</button>
-    <br><br>
     <div id="debug"></div>
 
 </body>
