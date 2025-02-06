@@ -4,36 +4,37 @@
 
     <title>Google Web SSO Demo</title>
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="color-scheme" content="light">
 
     <style>
-            body {
-                font-family: sans-serif;
-            }
+        body {
+               font-family: sans-serif;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100vh;
+               margin: 0;
+               background-color: #f0f0f0;
+           }
 
-            ul.separator {
-                list-style: none;
-                padding: 0;
-                width: 100%;
-            }
+           button {
+               padding: 15px 30px;
+               font-size: 18px;
+               margin: 10px;
+               cursor: pointer;
+               border: none;
+               border-radius: 5px;
+               background-color: #007bff;
+               color: white;
+               transition: background-color 0.3s ease;
+           }
 
-            ul.separator li {
-                padding: 1em 1em;
-                border-bottom: 1px solid #CCC;
-            }
-
-            ul.separator li:last-child {
-                border-bottom: 0;
-            }
-
-            li a {display: inline-block; height: 100%; width: 100%; }
-
-            a.no-text-decoration {
-                color:#000000;
-                text-decoration:none;
-            }
+           button:hover {
+               background-color: #0056b3;
+           }
     </style>
 
     <script type="text/javascript">
@@ -48,8 +49,13 @@
             // Get the 'code' parameter from the URL
             const code = getQueryParam('code');
 
-            const deepLinkUrl = `asbstockbroking://cmcmarkets.com?code=${code}`;
+            const deepLinkUrl = 'asbstockbroking://cmcmarkets.com?code=${code}';
             window.location.href = deepLinkUrl;
+        }
+
+         function openStaticLink() {
+            const staticLinkUrl = 'https://cmcmarkets.com';
+            window.location.href = staticLinkUrl;
         }
     </script>
 
@@ -57,7 +63,11 @@
 </head>
 
 <body style="margin:0px;">
+
     <button onclick="openMobileApp()">Open Mobile App</button>
+
+    <button onclick="openStaticLink()">Open Static Link</button>
+
 </body>
 
 </html>
