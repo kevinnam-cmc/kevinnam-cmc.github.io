@@ -47,14 +47,14 @@
 
         function openMobileApp() {
             // Get the 'code' parameter from the URL
-<!--            const code = getQueryParam('code');-->
+            const code = getQueryParam('code');
 
-            const deepLinkUrl = 'asbstockbroking://cmcmarkets.com';
+            const deepLinkUrl = 'asbstockbroking://cmcmarkets.com?code=${code}';
             window.location.href = deepLinkUrl;
         }
 
          function openStaticLink() {
-            const staticLinkUrl = 'asbstockbroking://cmcmarkets.com';
+            const staticLinkUrl = 'https://cmcmarkets.com';
             window.location.href = staticLinkUrl;
         }
     </script>
@@ -68,10 +68,6 @@
 
     <button onclick="openStaticLink()">Open Static Link</button>
 
-
-    <h1>
-        <a id="deeplink" href="asbstockbroking://cmcmarkets.com">Deep Link</a>
-    </h1>
 </body>
 
 </html>
