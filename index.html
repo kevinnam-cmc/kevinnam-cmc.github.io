@@ -64,9 +64,10 @@ body {
 
             const deepLinkUrl = `asbstockbroking://cmcmarkets.com/google_auth?code=${code}`;
             window.location.href = deepLinkUrl;
+
+            // Close the browser tab
+            window.close();
         }
-
-
 
         // Function to display the 'code' parameter for debugging
         function displayCodeParam() {
